@@ -1,0 +1,9 @@
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/build/crossbeam-utils-b4f1117e647b8c69/build_script_build-b4f1117e647b8c69.d: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/no_atomic.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build-common.rs
+
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/build/crossbeam-utils-b4f1117e647b8c69/build_script_build-b4f1117e647b8c69: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/no_atomic.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build-common.rs
+
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/no_atomic.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crossbeam-utils-0.8.21/build-common.rs:
+
+# env-dep:CARGO_PKG_NAME=crossbeam-utils

@@ -1,0 +1,10 @@
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/eywa_axum_macros-9b6324e71e7607b3.d: /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/lib.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/codegen.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/controller.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/openapi.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/parse.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/route.rs
+
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/libeywa_axum_macros-9b6324e71e7607b3.dylib: /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/lib.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/codegen.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/controller.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/openapi.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/parse.rs /Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/route.rs
+
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/lib.rs:
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/codegen.rs:
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/controller.rs:
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/openapi.rs:
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/parse.rs:
+/Users/tacosalfornoh/.cargo/git/checkouts/eywa-axum-macros-f61b9230ee4f95e7/01d4b48/src/route.rs:

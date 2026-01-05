@@ -1,0 +1,7 @@
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/num_cpus-7e28563acdda3ed5.d: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs
+
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/libnum_cpus-7e28563acdda3ed5.rlib: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs
+
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/libnum_cpus-7e28563acdda3ed5.rmeta: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs
+
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/num_cpus-1.17.0/src/lib.rs:

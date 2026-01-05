@@ -1,0 +1,9 @@
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/utoipa_scalar-eb46ab5877099b8b.d: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/lib.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/actix.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/axum.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/rocket.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/../res/scalar.html
+
+/private/var/folders/pw/kb3t3_dn4fb_4xh6cy3yptd80000gn/T/vibe-kanban/worktrees/98c6-update-deps/eywa-axum/target/debug/deps/libutoipa_scalar-eb46ab5877099b8b.rmeta: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/lib.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/actix.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/axum.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/rocket.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/../res/scalar.html
+
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/lib.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/actix.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/axum.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/rocket.rs:
+/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/utoipa-scalar-0.3.0/src/../res/scalar.html:

@@ -76,6 +76,26 @@ pub use serde_json::{self, json};
 pub use tokio;
 pub use tracing::{debug, error, info, instrument, warn};
 
+// Re-export common utilities
+pub use anyhow;
+pub use async_trait;
+pub use chrono;
+pub use reqwest;
+pub use rust_decimal;
+pub use thiserror;
+pub use url;
+pub use validator;
+
+// Re-export logging & tracing
+pub use tracing_loki;
+pub use tracing_subscriber;
+
+// Re-export metrics
+pub use axum_prometheus;
+
+// Re-export CORS from tower-http
+pub use tower_http::cors;
+
 // Re-export database & config
 pub use config as config_rs;
 pub use eywa_database::{Database, DatabaseConfig, transaction};
@@ -97,6 +117,23 @@ pub use utoipa_scalar::{Scalar, Servable};
 /// Prelude for easy importing
 pub mod prelude {
     pub use super::{
+        // Core types
+        anyhow,
+        async_trait,
+        chrono,
+        reqwest,
+        rust_decimal,
+        thiserror,
+        url,
+        validator,
+        // Logging
+        tracing_loki,
+        tracing_subscriber,
+        // Metrics
+        axum_prometheus,
+        // CORS
+        cors,
+        // EYWA types
         ApiCollectionResult,
         ApiResult,
         AppError,
