@@ -40,7 +40,7 @@ eywa-utoipa = { git = "https://github.com/EywaOS/eywa-utoipa" }
 # OpenAPI (re-exported via eywa-utoipa)
 utoipa = { version = "5.4.0", features = ["axum_extras", "uuid", "chrono"] }
 utoipa-axum = { version = "0.2" }
-utoipa-scalar = { version = "0.3" }
+utoipa-scalar = { version = "0.3", features = ["axum"] }
 utoipa-swagger-ui = { version = "8", optional = true }
 
 [features]
