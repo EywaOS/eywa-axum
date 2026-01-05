@@ -6,13 +6,12 @@ description = "The unified EYWA framework for Axum services"
 authors = ["EYWA Team"]
 
 [dependencies]
-eywa-axum-macros = { path = "../eywa-axum-macros" }
 
 # Re-exported dependencies (The Service Toolkit)
-axum = { workspace = true, features = ["macros"] }
-tokio = { workspace = true }
-serde = { workspace = true }
-serde_json = { workspace = true }
+axum = { version = "0.8.8", features = ["macros"] }
+tokio = { version = "1.48.0" }
+serde = { version = "1.0.228" }
+serde_json = { version = "1.0" }
 tracing = "0.1"
 tower = { version = "0.5", features = ["make", "util"] }
 tower-http = { version = "0.6", features = ["cors", "trace", "limit", "compression-gzip", "compression-deflate", "compression-br"] }
@@ -28,20 +27,21 @@ dotenvy = "0.15"
 uuid = { version = "1.0", features = ["v4", "serde"] }
 
 # EYWA Ecosystem
-eywa-database = { path = "../eywa-database" }
-eywa-errors = { path = "../eywa-errors" }
-eywa-hateoas = { path = "../eywa-hateoas" }
-eywa-pagination = { path = "../eywa-pagination" }
-eywa-authentication = { path = "../eywa-authentication" }
-eywa-user-id = { path = "../eywa-user-id" }
-eywa-types = { path = "../eywa-types" }
-eywa-utoipa = { path = "../eywa-utoipa" }
+eywa-axum-macros = { git = "https://github.com/EywaOS/eywa-axum-macros" }
+eywa-database = { git = "https://github.com/EywaOS/eywa-database" }
+eywa-errors = { git = "https://github.com/EywaOS/eywa-errors" }
+eywa-hateoas = { git = "https://github.com/EywaOS/eywa-hateoas" }
+eywa-pagination = { git = "https://github.com/EywaOS/eywa-pagination" }
+eywa-authentication = { git = "https://github.com/EywaOS/eywa-authentication" }
+eywa-user-id = { git = "https://github.com/EywaOS/eywa-user-id" }
+eywa-types = { git = "https://github.com/EywaOS/eywa-types" }
+eywa-utoipa = { git = "https://github.com/EywaOS/eywa-utoipa" }
 
 # OpenAPI (re-exported via eywa-utoipa)
-utoipa = { workspace = true, features = ["axum_extras", "uuid", "chrono"] }
-utoipa-axum = { workspace = true }
-utoipa-scalar = { workspace = true }
-utoipa-swagger-ui = { workspace = true, optional = true }
+utoipa = { version = "5.4.0", features = ["axum_extras", "uuid", "chrono"] }
+utoipa-axum = { version = "0.2" }
+utoipa-scalar = { version = "0.3" }
+utoipa-swagger-ui = { version = "8", optional = true }
 
 [features]
 default = ["scalar"]
