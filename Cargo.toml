@@ -58,8 +58,7 @@ sea-orm = { version = "1.1", features = [
     "runtime-tokio-rustls",
     "macros",
 ] }
-config = "0.15"
-dotenvy = "0.15"
+eywa-config = { path = "../eywa-config" }
 uuid = { version = "1.0", features = ["v4", "serde"] }
 
 # EYWA Ecosystem

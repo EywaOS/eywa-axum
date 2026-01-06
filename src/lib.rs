@@ -39,7 +39,7 @@
 
 // Re-export specific modules
 mod app;
-pub mod config;
+// pub mod config; // API change: config is now in eywa-config
 mod health;
 pub mod middleware;
 mod traits;
@@ -98,7 +98,8 @@ pub use eywa_metrics;
 pub use tower_http::cors;
 
 // Re-export database & config
-pub use config as config_rs;
+pub use eywa_config::config as config_rs;
+pub use eywa_config::EywaConfig;
 pub use eywa_database::{transaction, Database, DatabaseConfig};
 pub use sea_orm;
 
@@ -177,8 +178,8 @@ pub mod prelude {
         ToSchema,
         UserId,
     };
-    pub use crate::config::EywaConfig;
     pub use crate::traits::{IntoRouter, OpenApiPath};
+    pub use eywa_config::EywaConfig;
     pub use eywa_database::{Database, DatabaseConfig};
     pub use sea_orm::{self, ActiveModelTrait, ActiveValue, EntityTrait, ModelTrait, QueryFilter};
     pub use uuid::Uuid;
