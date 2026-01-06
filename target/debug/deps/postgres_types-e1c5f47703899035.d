@@ -1,9 +1,0 @@
-/Users/tacosalfornoh/Coding/Rust/EywaOS/services/shared/eywa-axum/target/debug/deps/postgres_types-e1c5f47703899035.d: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/lib.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/pg_lsn.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/private.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/special.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/type_gen.rs
-
-/Users/tacosalfornoh/Coding/Rust/EywaOS/services/shared/eywa-axum/target/debug/deps/libpostgres_types-e1c5f47703899035.rmeta: /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/lib.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/pg_lsn.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/private.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/special.rs /Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/type_gen.rs
-
-/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/lib.rs:
-/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/pg_lsn.rs:
-/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/private.rs:
-/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/special.rs:
-/Users/tacosalfornoh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/postgres-types-0.2.11/src/type_gen.rs:
