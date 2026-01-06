@@ -148,12 +148,10 @@ where
             info!("📍 {} {} [{}]", route.method, route.path, route.tag);
         }
 
-        // Nest or merge the controller router
-        if prefix.is_empty() {
-            self.router = self.router.merge(controller_openapi_router);
-        } else {
-            self.router = self.router.nest(prefix, controller_openapi_router);
-        }
+        // Merge the controller router (routes already have full path from macro)
+        // We always merge because the controller macro bakes in the full path
+        // (e.g., "/api/v1/auth/login") so nesting would cause double-prefixing
+        self.router = self.router.merge(controller_openapi_router);
 
         // Add controller tag if not already present
         if !self.tags.iter().any(|t| t.name == controller_tag) {
