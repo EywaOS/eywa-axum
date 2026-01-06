@@ -14,7 +14,15 @@ serde = { version = "1.0.228" }
 serde_json = { version = "1.0" }
 tracing = "0.1"
 tower = { version = "0.5", features = ["make", "util"] }
-tower-http = { version = "0.6.8", features = ["cors", "trace", "limit", "compression-gzip", "compression-deflate", "compression-br"] }
+tower-http = { version = "0.6.8", features = [
+    "cors",
+    "trace",
+    "limit",
+    "compression-gzip",
+    "compression-deflate",
+    "compression-br",
+    "normalize-path",
+] }
 
 # Common utilities to re-export
 chrono = { version = "0.4.39", features = ["serde"] }
@@ -24,7 +32,11 @@ validator = { version = "0.18", features = ["derive"] }
 url = "2.5"
 
 # Logging & tracing
-tracing-subscriber = { version = "0.3.18", features = ["env-filter", "registry", "fmt"] }
+tracing-subscriber = { version = "0.3.18", features = [
+    "env-filter",
+    "registry",
+    "fmt",
+] }
 tracing-loki = "0.2"
 
 # Metrics

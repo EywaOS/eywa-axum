@@ -304,9 +304,14 @@ where
     pub fn request_context(mut self) -> Self {
         use crate::middleware::request_context_middleware_fn;
 
-        self.router = self.router.layer(axum::middleware::from_fn(
-            request_context_middleware_fn,
-        ));
+        use tower_http::normalize_path::NormalizePathLayer;
+        use tower::ServiceBuilder;
+
+        self.router = self.router.layer(
+            ServiceBuilder::new()
+                .layer(NormalizePathLayer::trim_trailing_slash())
+                .layer(axum::middleware::from_fn(request_context_middleware_fn))
+        );
         self
     }
 
