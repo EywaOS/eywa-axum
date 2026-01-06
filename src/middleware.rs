@@ -141,8 +141,10 @@ pub async fn request_context_middleware_fn(mut req: Request, next: Next) -> Resp
     // Insert context into request extensions so logging middleware can access it
     req.extensions_mut().insert(ctx.clone());
 
-    // Continue the request with context
-    let mut response = next.run(req).await;
+    // Continue the request with request_id in task-local storage for error handling
+    let mut response: Response = eywa_errors::CURRENT_REQUEST_ID
+        .scope(request_id, next.run(req))
+        .await;
 
     // Add correlation ID to response headers
     if let Ok(header_value) = HeaderValue::from_str(&correlation_id.to_string()) {
