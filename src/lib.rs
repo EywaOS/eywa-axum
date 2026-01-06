@@ -117,22 +117,6 @@ pub use utoipa_scalar::{Scalar, Servable};
 /// Prelude for easy importing
 pub mod prelude {
     pub use super::{
-        // Core types
-        anyhow,
-        async_trait,
-        chrono,
-        reqwest,
-        rust_decimal,
-        thiserror,
-        url,
-        validator,
-        // Logging
-        tracing_loki,
-        tracing_subscriber,
-        // Metrics
-        axum_prometheus,
-        // CORS
-        cors,
         // EYWA types
         ApiCollectionResult,
         ApiResult,
@@ -164,7 +148,15 @@ pub mod prelude {
         State,
         ToSchema,
         UserId,
+        // Core types
+        anyhow,
+        async_trait,
+        // Metrics
+        axum_prometheus,
+        chrono,
         controller,
+        // CORS
+        cors,
         debug,
         delete,
         error,
@@ -174,8 +166,16 @@ pub mod prelude {
         patch,
         post,
         put,
+        reqwest,
         route,
         routes,
+        rust_decimal,
+        thiserror,
+        // Logging
+        tracing_loki,
+        tracing_subscriber,
+        url,
+        validator,
         warn,
     };
     pub use crate::config::EywaConfig;
