@@ -9,7 +9,6 @@ use tracing::info;
 use utoipa::ToSchema;
 use utoipa::openapi::security::{HttpAuthScheme, HttpBuilder, SecurityScheme};
 use utoipa::openapi::{Components, Info, OpenApi, Tag};
-use utoipa_axum::router::OpenApiRouter;
 use utoipa_scalar::{Scalar, Servable};
 
 use crate::traits::IntoRouter;
@@ -35,7 +34,7 @@ where
     S: Clone + Send + Sync + 'static,
 {
     state: S,
-    router: OpenApiRouter<S>,
+    router: Router<S>,
     info: Option<Info>,
     tags: Vec<Tag>,
     schema_fns: Vec<Box<dyn Fn(&mut utoipa::openapi::Components) + Send + Sync>>,
@@ -51,7 +50,7 @@ where
     pub fn new(state: S) -> Self {
         Self {
             state,
-            router: OpenApiRouter::new(),
+            router: Router::new(),
             info: None,
             tags: Vec::new(),
             schema_fns: Vec::new(),
@@ -137,9 +136,6 @@ where
         // Get the controller's router
         let controller_router = C::into_router(self.state.clone());
 
-        // Convert to OpenApiRouter
-        let controller_openapi_router: OpenApiRouter<S> = OpenApiRouter::from(controller_router);
-
         // Get OpenAPI route metadata
         let openapi_routes = C::openapi_routes();
 
@@ -151,7 +147,7 @@ where
         // Merge the controller router (routes already have full path from macro)
         // We always merge because the controller macro bakes in the full path
         // (e.g., "/api/v1/auth/login") so nesting would cause double-prefixing
-        self.router = self.router.merge(controller_openapi_router);
+        self.router = self.router.merge(controller_router);
 
         // Add controller tag if not already present
         if !self.tags.iter().any(|t| t.name == controller_tag) {
@@ -175,16 +171,8 @@ where
         self
     }
 
-    /// Add routes using utoipa-axum's `routes!` macro.
-    ///
-    /// For when you want to add routes outside of controllers.
-    pub fn routes(mut self, routes: utoipa_axum::router::UtoipaMethodRouter<S>) -> Self {
-        self.router = self.router.routes(routes);
-        self
-    }
-
-    /// Merge another OpenApiRouter into this one.
-    pub fn merge(mut self, other: OpenApiRouter<S>) -> Self {
+    /// Merge another Router into this one.
+    pub fn merge(mut self, other: Router<S>) -> Self {
         self.router = self.router.merge(other);
         self
     }
@@ -321,8 +309,7 @@ where
     /// 3. Adds a `/swagger` endpoint if swagger-ui feature is enabled
     /// 4. Starts the HTTP server
     pub async fn serve(self, addr: &str) -> crate::Result<()> {
-        // Split router to get OpenAPI
-        let (router, mut openapi) = self.router.split_for_parts();
+        let (mut router, mut openapi) = (self.router, OpenApi::default());
 
         // Apply custom info if provided
         if let Some(info) = self.info {
@@ -383,6 +370,8 @@ where
         }
 
         // Create final router with Scalar UI
+        // Scalar::with_url returns a Router that serves the UI and JSON
+        // We merge it into our main router
         let router = router
             .merge(Scalar::with_url("/scalar", openapi.clone()));
 
@@ -411,6 +400,14 @@ where
         if self.has_health_checks {
             info!("   - Health Checks: http://{}/health", addr);
         }
+
+        // Initialize metrics
+        eywa_metrics::init_metrics();
+
+        // Add metrics route
+        let router = router
+            .route("/metrics", get(eywa_metrics::metrics_handler))
+            .layer(axum::middleware::from_fn(eywa_metrics::track_metrics));
 
         axum::serve(listener, router.into_make_service())
             .await

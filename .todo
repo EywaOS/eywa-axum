@@ -1,0 +1,63 @@
+# eywa-axum TODO
+
+## Approved for Implementation
+- [ ] Structured Error Responses (RFC 7807)
+- [ ] Advanced Request Validation (eywa-validation)
+- [ ] Audit Logging (eywa-audit)
+- [ ] Saga Pattern (eywa-saga)
+
+---
+
+## Future Features
+
+### Webhooks System
+- [ ] Webhook registration (endpoint, secret, events)
+- [ ] Automatic retry con exponential backoff
+- [ ] Signature validation (HMAC-SHA256)
+- [ ] Webhook delivery logs
+- [ ] Dead letter queue per webhook falliti
+
+### WebSocket Support
+- [ ] `#[websocket("/path")]` macro
+- [ ] Room/channel management
+- [ ] Authentication per WebSocket
+- [ ] Heartbeat/ping-pong
+- [ ] Broadcast a gruppi di utenti
+
+### API Gateway Features
+- [ ] Load Balancing (round-robin, weighted, least-connections)
+- [ ] Circuit Breaker pattern (closed/open/half-open states)
+- [ ] Request Transformation (add/modify headers, body rewriting)
+- [ ] Response Transformation (filter fields, add metadata)
+- [ ] API Composition (aggregate multiple service calls)
+- [ ] Canary Deployments (traffic splitting by percentage)
+- [ ] Blue-Green Routing (instant version switching)
+
+### Multi-Tenancy
+- [ ] Tenant extraction middleware (subdomain, header, JWT)
+- [ ] Automatic query filtering by tenant_id
+- [ ] Tenant-aware connection pooling
+- [ ] Tenant isolation strategies (column, schema, database)
+
+### Security
+- [ ] Rate Limiting (in-memory or Redis-backed)
+- [ ] Request Signing (HMAC-SHA256 verification)
+- [ ] Idempotency Keys (prevent duplicate POST requests)
+
+### Observability
+- [ ] Distributed Tracing (OpenTelemetry/Jaeger)
+- [ ] Service Discovery (Consul/etcd integration)
+- [ ] API Analytics (usage patterns tracking)
+
+### Developer Experience
+- [ ] Feature Flags (runtime toggle with Redis/DB backend)
+- [ ] Config Hot Reload (update config without restart)
+- [ ] API Deprecation (warn headers for deprecated endpoints)
+- [ ] A/B Testing Framework (experiments with metrics)
+
+### Resilience
+- [ ] In-process Scheduler (tokio-cron for local tasks)
+- [ ] Graceful Shutdown Hooks (cleanup before shutdown)
+- [ ] Request Timeout per endpoint
+- [ ] Request Deduplication (cache identical responses)
+- [ ] Health Check Dependencies (cascading checks)

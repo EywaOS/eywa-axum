@@ -44,15 +44,15 @@ mod health;
 pub mod middleware;
 mod traits;
 
-pub use app::EywaApp;
 pub use app::legacy::LegacyEywaApp;
+pub use app::EywaApp;
 pub use traits::*;
 
 // Re-export health check types
 pub use health::{HealthController, HealthStatus};
 
 // Re-export middleware types
-pub use middleware::{RequestContext, request_context_middleware_fn};
+pub use middleware::{request_context_middleware_fn, RequestContext};
 
 // Re-export Swagger UI when feature is enabled
 #[cfg(feature = "swagger-ui")]
@@ -61,15 +61,16 @@ pub use utoipa_swagger_ui::{Config, SwaggerUi};
 // Re-export macros from eywa-axum-macros
 pub use eywa_axum_macros::{controller, openapi_for, route};
 
-// Re-export utoipa-axum for route registration
-pub use utoipa_axum::{router::OpenApiRouter, routes};
+// Re-export utoipa-axum deleted (Axum 0.8 compat)
+// pub use utoipa_axum::{router::OpenApiRouter, routes};
 
 // Re-export common dependencies
 pub use axum::{
-    self, Router,
+    self,
     extract::{Extension, Json, Path, Query, Request, State},
     response::{IntoResponse, Response},
     routing::{delete, get, patch, post, put},
+    Router,
 };
 pub use serde::{Deserialize, Serialize};
 pub use serde_json::{self, json};
@@ -91,18 +92,18 @@ pub use tracing_loki;
 pub use tracing_subscriber;
 
 // Re-export metrics
-pub use axum_prometheus;
+pub use eywa_metrics;
 
 // Re-export CORS from tower-http
 pub use tower_http::cors;
 
 // Re-export database & config
 pub use config as config_rs;
-pub use eywa_database::{Database, DatabaseConfig, transaction};
+pub use eywa_database::{transaction, Database, DatabaseConfig};
 pub use sea_orm;
 
 // Re-export EYWA ecosystem
-pub use eywa_authentication::{self, JwtService, middleware::auth_middleware};
+pub use eywa_authentication::{self, middleware::auth_middleware, JwtService};
 pub use eywa_errors::{self, AppError, Result};
 pub use eywa_hateoas::{self, CollectionResponse, HateoasResponse, Link};
 pub use eywa_pagination::{self, PaginationParams};
@@ -111,12 +112,39 @@ pub use eywa_user_id::{self, UserId};
 pub use eywa_utoipa::{self, IntoRouter as IntoRouterUtoipa, OpenApiBuilder, OpenApiRegistrar};
 
 // Re-export OpenAPI (via eywa-utoipa)
-pub use eywa_utoipa::{IntoParams, OpenApi, ToSchema, utoipa};
+pub use eywa_utoipa::{utoipa, IntoParams, OpenApi, ToSchema};
 pub use utoipa_scalar::{Scalar, Servable};
 
 /// Prelude for easy importing
 pub mod prelude {
     pub use super::{
+        // Core types
+        anyhow,
+        async_trait,
+        chrono,
+        controller,
+        // CORS
+        cors,
+        debug,
+        delete,
+        error,
+        // Metrics
+        eywa_metrics,
+        get,
+        info,
+        json,
+        patch,
+        post,
+        put,
+        reqwest,
+        rust_decimal,
+        thiserror,
+        // Logging
+        tracing_loki,
+        tracing_subscriber,
+        url,
+        validator,
+        warn,
         // EYWA types
         ApiCollectionResult,
         ApiResult,
@@ -135,7 +163,7 @@ pub mod prelude {
         Link,
         // OpenAPI related
         OpenApi,
-        OpenApiRouter,
+        // OpenApiRouter, <- Removed
         PaginationParams,
         Path,
         Query,
@@ -148,35 +176,6 @@ pub mod prelude {
         State,
         ToSchema,
         UserId,
-        // Core types
-        anyhow,
-        async_trait,
-        // Metrics
-        axum_prometheus,
-        chrono,
-        controller,
-        // CORS
-        cors,
-        debug,
-        delete,
-        error,
-        get,
-        info,
-        json,
-        patch,
-        post,
-        put,
-        reqwest,
-        route,
-        routes,
-        rust_decimal,
-        thiserror,
-        // Logging
-        tracing_loki,
-        tracing_subscriber,
-        url,
-        validator,
-        warn,
     };
     pub use crate::config::EywaConfig;
     pub use crate::traits::{IntoRouter, OpenApiPath};

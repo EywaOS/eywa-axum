@@ -8,13 +8,13 @@ authors = ["EYWA Team"]
 [dependencies]
 
 # Re-exported dependencies (The Service Toolkit)
-axum = { version = "0.8.8", features = ["macros"] }
-tokio = { version = "1.48.0" }
-serde = { version = "1.0.228" }
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1.48" }
+serde = { version = "1.0" }
 serde_json = { version = "1.0" }
 tracing = "0.1"
 tower = { version = "0.5", features = ["make", "util"] }
-tower-http = { version = "0.6.8", features = [
+tower-http = { version = "0.6", features = [
     "cors",
     "trace",
     "limit",
@@ -25,22 +25,23 @@ tower-http = { version = "0.6.8", features = [
 ] }
 
 # Common utilities to re-export
-chrono = { version = "0.4.39", features = ["serde"] }
-anyhow = "1.0.100"
-thiserror = "2.0.17"
-validator = { version = "0.18", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+thiserror = "2.0"
+validator = { version = "0.20", features = ["derive"] }
 url = "2.5"
 
 # Logging & tracing
-tracing-subscriber = { version = "0.3.18", features = [
+tracing-subscriber = { version = "0.3", features = [
     "env-filter",
     "registry",
     "fmt",
 ] }
 tracing-loki = "0.2"
 
+# Metrics (0.8+ for Axum 0.8 compatibility)
 # Metrics
-axum-prometheus = "0.6"
+eywa-metrics = { path = "../eywa-metrics" }
 
 # HTTP client
 reqwest = { version = "0.12", features = ["json"] }
@@ -64,7 +65,8 @@ uuid = { version = "1.0", features = ["v4", "serde"] }
 # EYWA Ecosystem
 eywa-axum-macros = { git = "https://github.com/EywaOS/eywa-axum-macros" }
 eywa-database = { git = "https://github.com/EywaOS/eywa-database" }
-eywa-errors = { git = "https://github.com/EywaOS/eywa-errors" }
+# TEMP: Using path until RFC 7807 changes are pushed
+eywa-errors = { path = "../eywa-errors" }
 eywa-hateoas = { git = "https://github.com/EywaOS/eywa-hateoas" }
 eywa-pagination = { git = "https://github.com/EywaOS/eywa-pagination" }
 eywa-authentication = { git = "https://github.com/EywaOS/eywa-authentication" }
@@ -72,9 +74,8 @@ eywa-user-id = { git = "https://github.com/EywaOS/eywa-user-id" }
 eywa-types = { git = "https://github.com/EywaOS/eywa-types" }
 eywa-utoipa = { git = "https://github.com/EywaOS/eywa-utoipa" }
 
-# OpenAPI (re-exported via eywa-utoipa)
-utoipa = { version = "5.4.0", features = ["axum_extras", "uuid", "chrono"] }
-utoipa-axum = { version = "0.2" }
+# OpenAPI (utoipa-axum removed for Axum 0.8 compatibility)
+utoipa = { version = "5.4", features = ["axum_extras", "uuid", "chrono"] }
 utoipa-scalar = { version = "0.3", features = ["axum"] }
 utoipa-swagger-ui = { version = "8", optional = true }
 
